@@ -21,10 +21,11 @@ public class MyHashSet<T> {
 
 
 
-    @SuppressWarnings("unchecked")
-    /*
+   
+    /**
        Создать обобщённый массив вручную, с осознанным подавлением предупреждения.
-     */
+    */
+    @SuppressWarnings("unchecked")
     public MyHashSet() {
         table = (Entry<T>[]) new Entry[DEFAULT_CAPACITY];
         size = 0;
