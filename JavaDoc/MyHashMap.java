@@ -1,5 +1,7 @@
 package JavaDoc;
 
+import java.util.Arrays;
+
 public class MyHashMap<K, V> {
     private static class Entry<K, V> {
         K key;
@@ -120,7 +122,27 @@ public class MyHashMap<K, V> {
         return keys;
     }
 
+    /**
+     *  Вычисляет индекс ячейки в хеш-таблице (table), где должен находиться элемент с заданным ключом.
+     * @param key Ключ
+     */
     private int getIndex(K key) {
         return Math.abs(key.hashCode()) % table.length;
     }
+
+    /**
+     * Выводит все элементы карты (ключ => значение), которые не удалены.
+     */
+    public void printAll() {
+        System.out.println("Содержимое MyHashMap:");
+        for (Entry<K, V> entry : table) {
+            if (entry != null && !entry.isDeleted) {
+                System.out.println(entry.key + " => " + entry.value);
+            }
+        }
+    }
+
+
+
+
 }
